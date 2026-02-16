@@ -1,19 +1,17 @@
-# 🛡️ Captcha for Elementor Pro Forms
+# Turnstile for Elementor Pro by Celeratec
 
-[![WordPress Plugin Version](https://img.shields.io/github/v/release/DavePodosyan/captcha-for-elementor-pro-forms?label=version&style=flat-square)](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases)
+[![WordPress Plugin Version](https://img.shields.io/github/v/release/Celeratec/turnstile-for-elementor-pro?label=version&style=flat-square)](https://github.com/Celeratec/turnstile-for-elementor-pro/releases)
 [![License](https://img.shields.io/badge/license-GPL%20v2%2B-blue?style=flat-square)](LICENSE)
 [![WordPress](https://img.shields.io/badge/WordPress-5.0%2B-blue?style=flat-square&logo=wordpress)](https://wordpress.org/)
 [![Elementor Pro](https://img.shields.io/badge/Elementor%20Pro-2.0%2B-orange?style=flat-square)](https://elementor.com/pro/)
 
-> **Professional CAPTCHA integration for Elementor Pro forms** - Add hCaptcha and Cloudflare Turnstile protection with seamless, native-like integration.
-
-![Captcha Integration Preview](https://img.shields.io/badge/🎯-Ready%20to%20Use-success?style=for-the-badge)
+> **Professional CAPTCHA integration for Elementor Pro forms** - Add hCaptcha and Cloudflare Turnstile protection with seamless, native-like integration. Maintained by [Celeratec VPS Hosting](https://github.com/Celeratec).
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### [📥 Download Latest Release](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases/latest/download/captcha-for-elementor-pro-forms.zip)
+### [Download Latest Release](https://github.com/Celeratec/turnstile-for-elementor-pro/releases/latest/download/turnstile-for-elementor-pro.zip)
 
 1. **Download** the plugin ZIP from the link above
 2. **Upload** to WordPress via `Plugins > Add New > Upload Plugin`
@@ -23,21 +21,21 @@
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎯 **CAPTCHA Providers**
+### CAPTCHA Providers
 
-- **🔒 hCaptcha** - Privacy-focused CAPTCHA solution
-- **☁️ Cloudflare Turnstile** - Invisible CAPTCHA with zero friction
+- **hCaptcha** - Privacy-focused CAPTCHA solution
+- **Cloudflare Turnstile** - Invisible CAPTCHA with zero friction
 
-### 🛠️ **Integration**
+### Integration
 
 - **Native Feel** - Works exactly like Elementor's built-in reCAPTCHA
 - **Pro Elements Compatible** - Works with both Elementor Pro and Pro Elements
 - **No Code Required** - Simple drag-and-drop field integration
 - **Settings Integration** - Configuration in familiar Elementor settings
 
-### 🎨 **Developer Features**
+### Developer Features
 
 - **Modern Architecture** - Clean, object-oriented code
 - **Extensible Design** - Abstract base class for adding new CAPTCHA providers
@@ -46,7 +44,7 @@
 
 ---
 
-## 🛡️ Supported CAPTCHA Solutions
+## Supported CAPTCHA Solutions
 
 <table>
 <tr>
@@ -54,28 +52,18 @@
 
 ### hCaptcha
 
-<img src="https://img.shields.io/badge/Privacy-Focused-green?style=flat-square" alt="Privacy Focused">
+**GDPR Compliant** | **Privacy-First** | **Enterprise Ready**
 
-✅ **GDPR Compliant**  
-✅ **Privacy-First Approach**  
-✅ **Rewards Users**  
-✅ **Enterprise Ready**
-
-[Get hCaptcha Keys →](https://www.hcaptcha.com/)
+[Get hCaptcha Keys](https://www.hcaptcha.com/)
 
 </td>
 <td align="center" width="50%">
 
 ### Cloudflare Turnstile
 
-<img src="https://img.shields.io/badge/Zero-Friction-blue?style=flat-square" alt="Zero Friction">
+**Invisible to Users** | **No Puzzles** | **Cloudflare Powered**
 
-✅ **Invisible to Users**  
-✅ **No Puzzles to Solve**  
-✅ **Cloudflare Powered**  
-✅ **Fast & Reliable**
-
-[Get Turnstile Keys →](https://developers.cloudflare.com/turnstile/)
+[Get Turnstile Keys](https://developers.cloudflare.com/turnstile/)
 
 </td>
 </tr>
@@ -83,25 +71,25 @@
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 | Requirement                           | Version | Status |
 | ------------------------------------- | ------- | ------ |
-| **WordPress**                         | 5.0+    | ✅     |
-| **PHP**                               | 7.4+    | ✅     |
-| **Elementor Pro** or **Pro Elements** | 2.0+    | ✅     |
+| **WordPress**                         | 5.0+    |   OK   |
+| **PHP**                               | 7.4+    |   OK   |
+| **Elementor Pro** or **Pro Elements** | 2.0+    |   OK   |
 
-> **💡 Note:** Works with both the full Elementor Pro and the free Pro Elements versions!
+> **Note:** Works with both the full Elementor Pro and the free Pro Elements versions!
 
 ---
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### Method 1: Direct Download (Recommended)
 
 ```bash
 # Download the latest release
-wget https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases/latest/download/captcha-for-elementor-pro-forms.zip
+wget https://github.com/Celeratec/turnstile-for-elementor-pro/releases/latest/download/turnstile-for-elementor-pro.zip
 
 # Upload via WordPress Admin > Plugins > Add New > Upload Plugin
 ```
@@ -114,23 +102,23 @@ wget https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases/la
 
 ---
 
-## ⚙️ Configuration Guide
+## Configuration Guide
 
-### 1. **hCaptcha Setup**
+### 1. hCaptcha Setup
 
 1. Visit [hCaptcha.com](https://www.hcaptcha.com/) and create an account
 2. Add your site and get your **Site Key** and **Secret Key**
 3. Go to **WordPress Admin > Elementor > Settings > Integrations > hCaptcha**
 4. Enter your keys and save
 
-### 2. **Cloudflare Turnstile Setup**
+### 2. Cloudflare Turnstile Setup
 
 1. Visit [Cloudflare Dashboard](https://dash.cloudflare.com/) and navigate to Turnstile
 2. Create a new site and get your **Site Key** and **Secret Key**
 3. Go to **WordPress Admin > Elementor > Settings > Integrations > Cloudflare Turnstile**
 4. Enter your keys and save
 
-### 3. **Adding to Forms**
+### 3. Adding to Forms
 
 1. Edit your Elementor page/template
 2. Add or edit a Form widget
@@ -140,28 +128,7 @@ wget https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases/la
 
 ---
 
-## 🎯 Why Choose This Plugin?
-
-### vs. Other CAPTCHA Plugins
-
-| Feature                  | This Plugin     | Others              |
-| ------------------------ | --------------- | ------------------- |
-| **Native Integration**   | ✅ Seamless     | ❌ Often clunky     |
-| **Multiple Providers**   | ✅ 2+ CAPTCHAs  | ❌ Usually just one |
-| **Pro Elements Support** | ✅ Full support | ❌ Pro only         |
-| **Modern Code**          | ✅ Professional | ❌ Often outdated   |
-| **Performance**          | ✅ Optimized    | ❌ Bloated          |
-
-### Developer Benefits
-
-- 🏗️ **Extensible architecture** for adding new CAPTCHA providers
-- 📦 **Modern build system** with npm, ESLint, and Prettier
-- 🔄 **Automated releases** via GitHub Actions
-- 📖 **Complete documentation** and development guide
-
----
-
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how to get started:
 
@@ -169,8 +136,8 @@ We welcome contributions! Here's how to get started:
 
 ```bash
 # Clone the repository
-git clone https://github.com/DavePodosyan/captcha-for-elementor-pro-forms.git
-cd captcha-for-elementor-pro-forms
+git clone https://github.com/Celeratec/turnstile-for-elementor-pro.git
+cd turnstile-for-elementor-pro
 
 # Install dependencies
 npm install
@@ -189,31 +156,31 @@ npm run dev
 
 ---
 
-## 🆘 Support & Documentation
+## Support & Documentation
 
-### 📚 **Documentation**
+### Documentation
 
-- [Installation Guide](#-installation--setup)
-- [Configuration Guide](#️-configuration-guide)
+- [Installation Guide](#installation--setup)
+- [Configuration Guide](#configuration-guide)
 - [Development Guide](DEVELOPMENT.md)
 
-### 🐛 **Issues & Bugs**
+### Issues & Bugs
 
-Found a bug? Please [open an issue](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/issues/new) with:
+Found a bug? Please [open an issue](https://github.com/Celeratec/turnstile-for-elementor-pro/issues/new) with:
 
 - WordPress version
 - Elementor Pro/Pro Elements version
 - Plugin version
 - Steps to reproduce
 
-### 💬 **Questions**
+### Questions
 
-- Check existing [Issues](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/issues)
-- Ask in [Discussions](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/discussions)
+- Check existing [Issues](https://github.com/Celeratec/turnstile-for-elementor-pro/issues)
+- Ask in [Discussions](https://github.com/Celeratec/turnstile-for-elementor-pro/discussions)
 
 ---
 
-## 📜 License
+## License
 
 This plugin is licensed under the **GPL v2 or later**.
 
@@ -226,11 +193,13 @@ the Free Software Foundation; either version 2 of the License, or
 
 ---
 
-## 🙏 Credits
+## Credits
 
-### Built With Love By
+This plugin is a fork of [Captcha for Elementor Pro Forms](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms) originally created by **[Dave Podosyan](https://github.com/DavePodosyan)** and released under the GPL v2 or later license.
 
-- **[Dave Podosyan](https://github.com/DavePodosyan)** - Creator & Maintainer
+### Maintained By
+
+- **[Celeratec, LLC](https://github.com/Celeratec)** - Celeratec VPS Hosting
 
 ### Powered By
 
@@ -242,14 +211,6 @@ the Free Software Foundation; either version 2 of the License, or
 
 <div align="center">
 
-### ⭐ **Enjoying this plugin?**
-
-**[Give it a star!](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/stargazers)** ⭐
-
-[![Download Latest](https://img.shields.io/badge/📥-Download%20Latest%20Release-success?style=for-the-badge)](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms/releases/latest)
-
----
-
-_Made with ❤️ for the WordPress community_
+[![Download Latest](https://img.shields.io/badge/Download%20Latest%20Release-success?style=for-the-badge)](https://github.com/Celeratec/turnstile-for-elementor-pro/releases/latest)
 
 </div>

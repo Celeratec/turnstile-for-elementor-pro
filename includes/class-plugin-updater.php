@@ -1,10 +1,19 @@
 <?php
 
+/**
+ * Plugin updater for GitHub releases.
+ *
+ * This file is part of Turnstile for Elementor Pro by Celeratec, a fork of
+ * "Captcha for Elementor Pro Forms" by Dave Podosyan, licensed under GPL v2+.
+ *
+ * Modified by Celeratec, LLC on 2026-02-16.
+ */
+
 if (!defined('ABSPATH')) {
     exit;
 }
 
-class CEPF_Plugin_Updater
+class TFEP_Plugin_Updater
 {
     private $plugin_slug;
     private $plugin_file;
@@ -17,10 +26,10 @@ class CEPF_Plugin_Updater
     {
         $this->plugin_file = $plugin_file;
         $this->plugin_slug = plugin_basename($plugin_file);
-        $this->plugin_version = CEPF_VERSION;
+        $this->plugin_version = TFEP_VERSION;
         $this->github_user = $github_user;
         $this->github_repo = $github_repo;
-        $this->transient_key = 'cepf_update_check_' . md5($this->plugin_slug);
+        $this->transient_key = 'tfep_update_check_' . md5($this->plugin_slug);
 
         add_filter('pre_set_site_transient_update_plugins', [$this, 'check_for_update']);
         add_filter('plugins_api', [$this, 'plugin_info'], 20, 3);
@@ -154,7 +163,7 @@ class CEPF_Plugin_Updater
         $download_url = null;
         if (isset($data['assets']) && is_array($data['assets'])) {
             foreach ($data['assets'] as $asset) {
-                if ($asset['name'] === 'captcha-for-elementor-pro-forms.zip') {
+                if ($asset['name'] === 'turnstile-for-elementor-pro.zip') {
                     $download_url = $asset['browser_download_url'];
                     break;
                 }
@@ -185,8 +194,9 @@ class CEPF_Plugin_Updater
 
     private function get_plugin_description($remote_version)
     {
-        $description = '<h2>Captcha for Elementor Pro Forms</h2>';
+        $description = '<h2>Turnstile for Elementor Pro by Celeratec</h2>';
         $description .= '<p>Professional CAPTCHA integration for Elementor Pro forms with hCaptcha and Cloudflare Turnstile support.</p>';
+        $description .= '<p><em>A fork of Captcha for Elementor Pro Forms by Dave Podosyan, maintained by Celeratec VPS Hosting.</em></p>';
         
         $description .= '<h3>Features</h3>';
         $description .= '<ul>';

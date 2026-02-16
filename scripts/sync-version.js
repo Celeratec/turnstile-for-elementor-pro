@@ -14,15 +14,15 @@ const version = packageJson.version;
 console.log(`Syncing version to ${version}...`);
 
 // Update main plugin file
-const pluginFile = 'captcha-for-elementor-pro-forms.php';
+const pluginFile = 'turnstile-for-elementor-pro.php';
 let pluginContent = fs.readFileSync(pluginFile, 'utf8');
 
 // Update Version header
 pluginContent = pluginContent.replace(/(\* Version:\s+)[\d.]+/, `$1${version}`);
 
-// Update CEPF_VERSION constant
+// Update TFEP_VERSION constant
 pluginContent = pluginContent.replace(
-    /(define\('CEPF_VERSION',\s+')[\d.]+('\);)/,
+    /(define\('TFEP_VERSION',\s+')[\d.]+('\);)/,
     `$1${version}$2`
 );
 

@@ -1,6 +1,6 @@
 # Development Guide
 
-This guide covers how to develop, build, and release the Captcha for Elementor Pro Forms plugin.
+This guide covers how to develop, build, and release the Turnstile for Elementor Pro by Celeratec plugin.
 
 ## Quick Start
 
@@ -45,7 +45,7 @@ This guide covers how to develop, build, and release the Captcha for Elementor P
 ## Project Structure
 
 ```
-captcha-for-elementor-pro-forms/
+turnstile-for-elementor-pro/
 ├── assets/js/               # Frontend JavaScript
 ├── includes/                # PHP classes
 ├── scripts/                 # Build/development scripts
@@ -60,7 +60,7 @@ captcha-for-elementor-pro-forms/
 Versions are managed in `package.json` and automatically synced to:
 
 - Main plugin file header
-- `CEPF_VERSION` constant
+- `TFEP_VERSION` constant
 - `readme.txt` stable tag
 
 To update version:
@@ -77,7 +77,7 @@ git push origin main & git push --tags
 
 1. Update version: `npm version [patch|minor|major]`
 2. Create release: `npm run release`
-3. Upload `releases/captcha-for-elementor-pro-forms-X.X.X.zip` to WordPress.org
+3. Upload `releases/turnstile-for-elementor-pro-X.X.X.zip` to WordPress.org
 
 ### Automated Release (GitHub)
 
@@ -109,7 +109,7 @@ git push origin main & git push --tags
 
 ### PHP Classes (`includes/`)
 
-- Extend `CEPF_Base_Captcha_Handler` for new CAPTCHA providers
+- Extend `TFEP_Base_Captcha_Handler` for new CAPTCHA providers
 - Follow WordPress plugin architecture
 - Use proper namespacing and autoloading
 
@@ -117,7 +117,7 @@ git push origin main & git push --tags
 
 1. Create JavaScript handler in `assets/js/provider-handler.js`
 2. Create PHP class in `includes/class-provider-handler.php`
-3. Extend `CEPF_Base_Captcha_Handler`
+3. Extend `TFEP_Base_Captcha_Handler`
 4. Implement all abstract methods
 5. Register in main plugin file
 6. Update documentation

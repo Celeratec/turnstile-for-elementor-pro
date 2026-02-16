@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Cloudflare Turnstile handler for Elementor Pro forms.
+ *
+ * This file is part of Turnstile for Elementor Pro by Celeratec, a fork of
+ * "Captcha for Elementor Pro Forms" by Dave Podosyan, licensed under GPL v2+.
+ *
+ * Modified by Celeratec, LLC on 2026-02-16.
+ */
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -9,7 +18,7 @@ use Elementor\Widget_Base;
 use ElementorPro\Plugin;
 use Elementor\Controls_Manager;
 
-class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
+class TFEP_Turnstile_Handler extends TFEP_Base_Captcha_Handler
 {
     const OPTION_NAME_SITE_KEY = 'elementor_pro_cf_turnstile_site_key';
     const OPTION_NAME_SECRET_KEY = 'elementor_pro_cf_turnstile_secret_key';
@@ -51,30 +60,30 @@ class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
 
     public static function get_setup_message()
     {
-        return esc_html__('To use Cloudflare Turnstile, you need to add the API Key and complete the setup process in Dashboard > Elementor > Settings > Integrations > Cloudflare Turnstile.', 'captcha-for-elementor-pro-forms');
+        return esc_html__('To use Cloudflare Turnstile, you need to add the API Key and complete the setup process in Dashboard > Elementor > Settings > Integrations > Cloudflare Turnstile.', 'turnstile-for-elementor-pro');
     }
 
     public function register_admin_fields(Settings $settings)
     {
         $settings->add_section(Settings::TAB_INTEGRATIONS, static::get_captcha_name(), [
-            'label' => esc_html__('Cloudflare Turnstile', 'captcha-for-elementor-pro-forms'),
+            'label' => esc_html__('Cloudflare Turnstile', 'turnstile-for-elementor-pro'),
             'callback' => function () {
                 echo sprintf(
                     /* translators: 1: Link opening tag, 2: Link closing tag. */
-                    esc_html__('%1$sCloudflare Turnstile%2$s is Cloudflare\'s CAPTCHA alternative solution where your users don\'t ever have to solve another puzzle to get to your website, no more stop lights and fire hydrants.', 'captcha-for-elementor-pro-forms'),
+                    esc_html__('%1$sCloudflare Turnstile%2$s is Cloudflare\'s CAPTCHA alternative solution where your users don\'t ever have to solve another puzzle to get to your website, no more stop lights and fire hydrants.', 'turnstile-for-elementor-pro'),
                     '<a href="https://www.cloudflare.com/application-services/products/turnstile/" target="_blank">',
                     '</a>'
                 );
             },
             'fields' => [
                 'pro_cf_turnstile_site_key' => [
-                    'label' => esc_html__('Site Key', 'captcha-for-elementor-pro-forms'),
+                    'label' => esc_html__('Site Key', 'turnstile-for-elementor-pro'),
                     'field_args' => [
                         'type' => 'text',
                     ],
                 ],
                 'pro_cf_turnstile_secret_key' => [
-                    'label' => esc_html__('Secret Key', 'captcha-for-elementor-pro-forms'),
+                    'label' => esc_html__('Secret Key', 'turnstile-for-elementor-pro'),
                     'field_args' => [
                         'type' => 'text',
                     ],
@@ -86,16 +95,16 @@ class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
     protected function get_error_messages()
     {
         return [
-            'missing-input-secret' => esc_html__('The secret parameter is missing.', 'captcha-for-elementor-pro-forms'),
-            'invalid-input-secret' => esc_html__('The secret parameter is invalid or malformed.', 'captcha-for-elementor-pro-forms'),
-            'missing-input-response' => esc_html__('The response parameter is missing.', 'captcha-for-elementor-pro-forms'),
-            'invalid-input-response' => esc_html__('The response parameter is invalid or malformed.', 'captcha-for-elementor-pro-forms'),
+            'missing-input-secret' => esc_html__('The secret parameter is missing.', 'turnstile-for-elementor-pro'),
+            'invalid-input-secret' => esc_html__('The secret parameter is invalid or malformed.', 'turnstile-for-elementor-pro'),
+            'missing-input-response' => esc_html__('The response parameter is missing.', 'turnstile-for-elementor-pro'),
+            'invalid-input-response' => esc_html__('The response parameter is invalid or malformed.', 'turnstile-for-elementor-pro'),
         ];
     }
 
     protected function get_validation_error_message()
     {
-        return esc_html__('Invalid form, Cloudflare Turnstile validation failed.', 'captcha-for-elementor-pro-forms');
+        return esc_html__('Invalid form, Cloudflare Turnstile validation failed.', 'turnstile-for-elementor-pro');
     }
 
     public function render_field($item, $item_index, $widget)
@@ -146,7 +155,7 @@ class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
 
     public function add_field_type($field_types)
     {
-        $field_types['cf_turnstile'] = esc_html__('Cloudflare Turnstile', 'captcha-for-elementor-pro-forms');
+        $field_types['cf_turnstile'] = esc_html__('Cloudflare Turnstile', 'turnstile-for-elementor-pro');
 
         return $field_types;
     }
@@ -176,12 +185,12 @@ class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
         $field_controls = [
             $this->get_captcha_name() . '_style' => [
                 'name' => $this->get_captcha_name() . '_style',
-                'label' => esc_html__('Style', 'captcha-for-elementor-pro-forms'),
+                'label' => esc_html__('Style', 'turnstile-for-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'auto' => esc_html__('Auto', 'captcha-for-elementor-pro-forms'),
-                    'light' => esc_html__('Light', 'captcha-for-elementor-pro-forms'),
-                    'dark' => esc_html__('Dark', 'captcha-for-elementor-pro-forms'),
+                    'auto' => esc_html__('Auto', 'turnstile-for-elementor-pro'),
+                    'light' => esc_html__('Light', 'turnstile-for-elementor-pro'),
+                    'dark' => esc_html__('Dark', 'turnstile-for-elementor-pro'),
                 ],
                 'default' => 'auto',
                 'condition' => [
@@ -193,11 +202,11 @@ class CEPF_Turnstile_Handler extends CEPF_Base_Captcha_Handler
             ],
             $this->get_captcha_name() . '_appearance' => [
                 'name' => $this->get_captcha_name() . '_appearance',
-                'label' => esc_html__('Appearance', 'captcha-for-elementor-pro-forms'),
+                'label' => esc_html__('Appearance', 'turnstile-for-elementor-pro'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'always' => esc_html__('Always', 'captcha-for-elementor-pro-forms'),
-                    'interaction-only' => esc_html__('Interaction Only', 'captcha-for-elementor-pro-forms'),
+                    'always' => esc_html__('Always', 'turnstile-for-elementor-pro'),
+                    'interaction-only' => esc_html__('Interaction Only', 'turnstile-for-elementor-pro'),
                 ],
                 'default' => 'always',
                 'condition' => [

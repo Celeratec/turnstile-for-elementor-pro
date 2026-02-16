@@ -1,5 +1,5 @@
-=== Captcha for Elementor Pro Forms ===
-Contributors: davepodosyan
+=== Turnstile for Elementor Pro by Celeratec ===
+Contributors: celeratec
 Tags: elementor, captcha, hcaptcha, turnstile, cloudflare, security, forms, spam protection
 Requires at least: 5.0
 Tested up to: 6.8
@@ -12,7 +12,9 @@ Adds hCaptcha and Cloudflare Turnstile support to Elementor Pro forms with seaml
 
 == Description ==
 
-Captcha for Elementor Pro Forms extends your Elementor Pro forms with advanced CAPTCHA solutions including hCaptcha and Cloudflare Turnstile. Protect your website from bots and spam while ensuring a smooth user experience.
+Turnstile for Elementor Pro by Celeratec extends your Elementor Pro forms with advanced CAPTCHA solutions including hCaptcha and Cloudflare Turnstile. Protect your website from bots and spam while ensuring a smooth user experience.
+
+This plugin is a fork of [Captcha for Elementor Pro Forms](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms) originally created by Dave Podosyan, rebranded and maintained by Celeratec VPS Hosting.
 
 **Features:**
 
@@ -30,7 +32,7 @@ Captcha for Elementor Pro Forms extends your Elementor Pro forms with advanced C
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/captcha-for-elementor-pro-forms` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/turnstile-for-elementor-pro` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. **Important**: This plugin requires Elementor Pro or Pro Elements as it needs the Form widget functionality.
 4. Go to **Elementor > Settings > Integrations** to configure your CAPTCHA providers.
@@ -120,7 +122,13 @@ The plugin only stores your CAPTCHA API keys in the WordPress options table. No 
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of Captcha for Elementor Pro Forms.
+Initial release of Turnstile for Elementor Pro by Celeratec.
+
+== Credits ==
+
+This plugin is a fork of "Captcha for Elementor Pro Forms" originally created by
+[Dave Podosyan](https://github.com/DavePodosyan) and released under the GPL v2 or later license.
+Rebranded and maintained by [Celeratec, LLC](https://github.com/Celeratec) for Celeratec VPS Hosting clients.
 
 == Development ==
 
@@ -133,7 +141,7 @@ This plugin is developed with modern WordPress standards:
 * Comprehensive error handling
 * Performance optimization with external assets
 
-For support and contributions, visit the [GitHub repository](https://github.com/DavePodosyan/captcha-for-elementor-pro-forms).
+For support and contributions, visit the [GitHub repository](https://github.com/Celeratec/turnstile-for-elementor-pro).
 
 == Privacy ==
 

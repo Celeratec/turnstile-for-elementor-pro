@@ -1,10 +1,10 @@
 {
-  "name": "captcha-for-elementor-pro-forms",
+  "name": "turnstile-for-elementor-pro",
   "version": "1.0.14",
   "description": "Adds hCaptcha and Cloudflare Turnstile support to Elementor Pro forms",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DavePodosyan/captcha-for-elementor-pro-forms.git"
+    "url": "https://github.com/Celeratec/turnstile-for-elementor-pro.git"
   },
   "keywords": [
     "wordpress",
@@ -15,17 +15,17 @@
     "turnstile",
     "cloudflare"
   ],
-  "author": "Dave Podosyan",
+  "author": "Celeratec, LLC",
   "license": "GPL-2.0-or-later",
   "type": "module",
   "scripts": {
     "build": "npm run clean && npm run copy-files && npm run create-zip",
     "clean": "rimraf dist releases",
     "copy-files": "npm run create-dirs && npm run copy-plugin-files && npm run create-languages-dir",
-    "create-dirs": "mkdir -p dist/captcha-for-elementor-pro-forms releases",
-    "copy-plugin-files": "cp captcha-for-elementor-pro-forms.php readme.txt uninstall.php dist/captcha-for-elementor-pro-forms/ && cp -r assets includes dist/captcha-for-elementor-pro-forms/",
-    "create-languages-dir": "mkdir -p dist/captcha-for-elementor-pro-forms/languages",
-    "create-zip": "cd dist && zip -r ../releases/captcha-for-elementor-pro-forms.zip captcha-for-elementor-pro-forms/",
+    "create-dirs": "mkdir -p dist/turnstile-for-elementor-pro releases",
+    "copy-plugin-files": "cp turnstile-for-elementor-pro.php readme.txt uninstall.php dist/turnstile-for-elementor-pro/ && cp -r assets includes dist/turnstile-for-elementor-pro/",
+    "create-languages-dir": "mkdir -p dist/turnstile-for-elementor-pro/languages",
+    "create-zip": "cd dist && zip -r ../releases/turnstile-for-elementor-pro.zip turnstile-for-elementor-pro/",
     "dev": "npm run lint && npm run build",
     "lint": "npm run lint:js && npm run lint:format",
     "lint:js": "eslint assets/js/ --ext .js",
@@ -33,7 +33,7 @@
     "format": "prettier --write .",
     "watch": "npm run lint:js -- --watch",
     "version-sync": "node scripts/sync-version.js",
-    "version": "npm run version-sync && git add captcha-for-elementor-pro-forms.php readme.txt",
+    "version": "npm run version-sync && git add turnstile-for-elementor-pro.php readme.txt",
     "prerelease": "npm run version-sync && npm run lint && npm run build",
     "release": "npm run prerelease && echo 'Release ZIP created in releases/ directory'",
     "test": "echo 'No tests yet' && exit 0"

@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Base CAPTCHA handler abstract class.
+ *
+ * This file is part of Turnstile for Elementor Pro by Celeratec, a fork of
+ * "Captcha for Elementor Pro Forms" by Dave Podosyan, licensed under GPL v2+.
+ *
+ * Modified by Celeratec, LLC on 2026-02-16.
+ */
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -9,7 +18,7 @@ use Elementor\Widget_Base;
 use ElementorPro\Core\Utils;
 use ElementorPro\Plugin;
 
-abstract class CEPF_Base_Captcha_Handler
+abstract class TFEP_Base_Captcha_Handler
 {
     abstract protected static function get_captcha_name();
     abstract protected static function get_option_name_site_key();
@@ -81,9 +90,9 @@ abstract class CEPF_Base_Captcha_Handler
 
         wp_register_script(
             static::get_handler_script_name(),
-            CEPF_PLUGIN_URL . 'assets/js/' . static::get_handler_js_file(),
+            TFEP_PLUGIN_URL . 'assets/js/' . static::get_handler_js_file(),
             ['elementor-frontend'],
-            CEPF_VERSION,
+            TFEP_VERSION,
             true
         );
     }
@@ -107,10 +116,10 @@ abstract class CEPF_Base_Captcha_Handler
         }
 
         wp_enqueue_script(
-            'cepf-admin-editor',
-            CEPF_PLUGIN_URL . 'assets/js/admin-editor.js',
+            'tfep-admin-editor',
+            TFEP_PLUGIN_URL . 'assets/js/admin-editor.js',
             ['jquery', 'elementor-editor'],
-            CEPF_VERSION,
+            TFEP_VERSION,
             true
         );
 
@@ -132,7 +141,7 @@ abstract class CEPF_Base_Captcha_Handler
         $captcha_response = Utils::_unstable_get_super_global_value($_POST, static::get_response_field_name());
 
         if (empty($captcha_response)) {
-            $ajax_handler->add_error($field['id'], esc_html__('The Captcha field cannot be blank. Please enter a value.', 'captcha-for-elementor-pro-forms'));
+            $ajax_handler->add_error($field['id'], esc_html__('The Captcha field cannot be blank. Please enter a value.', 'turnstile-for-elementor-pro'));
             return;
         }
 
@@ -156,7 +165,7 @@ abstract class CEPF_Base_Captcha_Handler
 
         if (is_wp_error($response)) {
             $ajax_handler->add_error($field['id'], sprintf(
-                esc_html__('Connection error: %s', 'captcha-for-elementor-pro-forms'),
+                esc_html__('Connection error: %s', 'turnstile-for-elementor-pro'),
                 $response->get_error_message()
             ));
             return;
@@ -166,7 +175,7 @@ abstract class CEPF_Base_Captcha_Handler
 
         if (200 !== (int) $response_code) {
             $ajax_handler->add_error($field['id'], sprintf(
-                esc_html__('Can not connect to the captcha server (%d).', 'captcha-for-elementor-pro-forms'),
+                esc_html__('Can not connect to the captcha server (%d).', 'turnstile-for-elementor-pro'),
                 $response_code
             ));
             return;

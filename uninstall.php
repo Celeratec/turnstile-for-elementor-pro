@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Uninstall handler for Turnstile for Elementor Pro by Celeratec.
+ *
+ * This file is part of Turnstile for Elementor Pro by Celeratec, a fork of
+ * "Captcha for Elementor Pro Forms" by Dave Podosyan, licensed under GPL v2+.
+ *
+ * Modified by Celeratec, LLC on 2026-02-16.
+ */
+
 if (!defined('WP_UNINSTALL_PLUGIN')) {
     exit;
 }
@@ -16,4 +25,4 @@ foreach ($options_to_delete as $option) {
     delete_site_option($option);
 }
 
-delete_transient('captcha_elementor_pro_activation_check');
+delete_transient('tfep_activation_check');
