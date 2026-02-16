@@ -6,6 +6,8 @@ if (typeof window.ElementorHcaptchaHandler === 'undefined') {
                     hcaptcha: '.elementor-hcaptcha:last',
                     submit: 'button[type="submit"]',
                 },
+                maxApiRetries: 60,
+                maxVisibilityRetries: 150,
             };
         }
 
@@ -19,13 +21,16 @@ if (typeof window.ElementorHcaptchaHandler === 'undefined') {
         }
 
         bindEvents() {
+            this.apiRetries = 0;
+            this.visibilityRetries = 0;
             this.waitForHcaptcha();
         }
 
         waitForHcaptcha() {
             if (window.hcaptcha && typeof window.hcaptcha.render === 'function') {
                 this.renderHcaptcha();
-            } else {
+            } else if (this.apiRetries < this.getDefaultSettings().maxApiRetries) {
+                this.apiRetries++;
                 setTimeout(() => this.waitForHcaptcha(), 350);
             }
         }
@@ -38,7 +43,10 @@ if (typeof window.ElementorHcaptchaHandler === 'undefined') {
             }
 
             if (!jQuery(el).is(':visible')) {
-                setTimeout(() => this.renderHcaptcha(), 200);
+                if (this.visibilityRetries < this.getDefaultSettings().maxVisibilityRetries) {
+                    this.visibilityRetries++;
+                    setTimeout(() => this.renderHcaptcha(), 200);
+                }
                 return;
             }
 

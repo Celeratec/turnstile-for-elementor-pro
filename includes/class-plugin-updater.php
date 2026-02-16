@@ -52,7 +52,7 @@ class TFEP_Plugin_Updater
                 'new_version' => $remote_version['version'],
                 'url' => $this->get_github_repo_url(),
                 'package' => $remote_version['download_url'],
-                'tested' => '6.6',
+                'tested' => '6.8',
                 'compatibility' => [],
             ];
         }
@@ -94,7 +94,7 @@ class TFEP_Plugin_Updater
             ],
             'download_link' => $remote_version['download_url'],
             'requires' => $plugin_data['RequiresWP'] ?: '5.0',
-            'tested' => '6.6',
+            'tested' => '6.8',
             'requires_php' => $plugin_data['RequiresPHP'] ?: '7.4',
             'last_updated' => $remote_version['published_at'],
             'added' => '',
@@ -105,7 +105,8 @@ class TFEP_Plugin_Updater
 
     public function download_package($reply, $package, $upgrader)
     {
-        if (strpos($package, 'github.com/' . $this->github_user . '/' . $this->github_repo) !== false) {
+        $expected_prefix = 'https://github.com/' . $this->github_user . '/' . $this->github_repo . '/';
+        if (strpos($package, $expected_prefix) === 0) {
             $temp_file = download_url($package);
 
             if (is_wp_error($temp_file)) {
@@ -124,7 +125,7 @@ class TFEP_Plugin_Updater
             isset($options['action']) && $options['action'] === 'update' &&
             isset($options['type']) && $options['type'] === 'plugin' &&
             isset($options['plugins']) && is_array($options['plugins']) &&
-            in_array($this->plugin_slug, $options['plugins'])
+            in_array($this->plugin_slug, $options['plugins'], true)
         ) {
             delete_transient($this->transient_key);
         }
@@ -189,7 +190,7 @@ class TFEP_Plugin_Updater
 
     private function get_github_repo_url()
     {
-        return "https://github.com/{$this->github_user}/{$this->github_repo}";
+        return esc_url("https://github.com/{$this->github_user}/{$this->github_repo}");
     }
 
     private function get_plugin_description($remote_version)

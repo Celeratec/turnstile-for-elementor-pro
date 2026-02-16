@@ -109,21 +109,7 @@ abstract class TFEP_Base_Captcha_Handler
 
     public function enqueue_admin_scripts()
     {
-        static $admin_script_enqueued = false;
-
-        if ($admin_script_enqueued) {
-            return;
-        }
-
-        wp_enqueue_script(
-            'tfep-admin-editor',
-            TFEP_PLUGIN_URL . 'assets/js/admin-editor.js',
-            ['jquery', 'elementor-editor'],
-            TFEP_VERSION,
-            true
-        );
-
-        $admin_script_enqueued = true;
+        // Reserved for future admin editor scripts
     }
 
     public function validation($record, $ajax_handler)
@@ -164,10 +150,10 @@ abstract class TFEP_Base_Captcha_Handler
         $response = wp_remote_post(static::get_verify_api_url(), $request);
 
         if (is_wp_error($response)) {
-            $ajax_handler->add_error($field['id'], sprintf(
-                esc_html__('Connection error: %s', 'turnstile-for-elementor-pro'),
-                $response->get_error_message()
-            ));
+            $ajax_handler->add_error(
+                $field['id'],
+                esc_html__('Unable to connect to the captcha verification server. Please try again.', 'turnstile-for-elementor-pro')
+            );
             return;
         }
 
@@ -249,7 +235,6 @@ abstract class TFEP_Base_Captcha_Handler
         add_filter('elementor_pro/forms/render/item', [$this, 'filter_field_item']);
         add_filter('elementor_pro/editor/localize_settings', [$this, 'localize_settings']);
         add_action('elementor/element/form/section_form_fields/before_section_end', [$this, 'update_controls']);
-
 
         if (static::is_enabled()) {
             add_action('elementor_pro/forms/validation', [$this, 'validation'], 10, 2);

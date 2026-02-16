@@ -78,7 +78,7 @@ class Turnstile_For_Elementor_Pro
             return;
         }
 
-        // $this->load_textdomain();
+        $this->load_textdomain();
         $this->include_files();
         $this->init_handlers();
     }
@@ -97,18 +97,12 @@ class Turnstile_For_Elementor_Pro
             return false;
         }
 
-        if (defined('ELEMENTOR_PRO_VERSION') && !version_compare(ELEMENTOR_PRO_VERSION, '2.0', '>=')) {
+        if (!version_compare(ELEMENTOR_PRO_VERSION, '2.0', '>=')) {
             add_action('admin_notices', [$this, 'admin_notice_minimum_elementor_pro_version']);
             return false;
         }
 
         return true;
-    }
-
-    private function has_elementor_pro_forms()
-    {
-        // Check for forms capability - works with both Elementor Pro and Pro Elements
-        return class_exists('ElementorPro\\Modules\\Forms\\Module');
     }
 
     private function load_textdomain()

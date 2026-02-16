@@ -6,6 +6,8 @@ if (typeof window.ElementorTurnstileHandler === 'undefined') {
                     turnstile: '.elementor-cf-turnstile:last',
                     submit: 'button[type="submit"]',
                 },
+                maxApiRetries: 60,
+                maxVisibilityRetries: 150,
             };
         }
 
@@ -19,13 +21,16 @@ if (typeof window.ElementorTurnstileHandler === 'undefined') {
         }
 
         bindEvents() {
+            this.apiRetries = 0;
+            this.visibilityRetries = 0;
             this.waitForTurnstile();
         }
 
         waitForTurnstile() {
             if (window.turnstile && typeof window.turnstile.render === 'function') {
                 this.renderTurnstile();
-            } else {
+            } else if (this.apiRetries < this.getDefaultSettings().maxApiRetries) {
+                this.apiRetries++;
                 setTimeout(() => this.waitForTurnstile(), 350);
             }
         }
@@ -38,7 +43,10 @@ if (typeof window.ElementorTurnstileHandler === 'undefined') {
             }
 
             if (!jQuery(el).is(':visible')) {
-                setTimeout(() => this.renderTurnstile(), 200);
+                if (this.visibilityRetries < this.getDefaultSettings().maxVisibilityRetries) {
+                    this.visibilityRetries++;
+                    setTimeout(() => this.renderTurnstile(), 200);
+                }
                 return;
             }
 

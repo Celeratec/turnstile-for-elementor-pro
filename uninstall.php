@@ -25,4 +25,12 @@ foreach ($options_to_delete as $option) {
     delete_site_option($option);
 }
 
-delete_transient('tfep_activation_check');
+// Clean up updater transients
+global $wpdb;
+$wpdb->query(
+    $wpdb->prepare(
+        "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s OR option_name LIKE %s",
+        '_transient_tfep_update_check_%',
+        '_transient_timeout_tfep_update_check_%'
+    )
+);

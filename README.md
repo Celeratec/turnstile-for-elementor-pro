@@ -75,9 +75,9 @@
 
 | Requirement                           | Version | Status |
 | ------------------------------------- | ------- | ------ |
-| **WordPress**                         | 5.0+    |   OK   |
-| **PHP**                               | 7.4+    |   OK   |
-| **Elementor Pro** or **Pro Elements** | 2.0+    |   OK   |
+| **WordPress**                         | 5.0+    | OK     |
+| **PHP**                               | 7.4+    | OK     |
+| **Elementor Pro** or **Pro Elements** | 2.0+    | OK     |
 
 > **Note:** Works with both the full Elementor Pro and the free Pro Elements versions!
 

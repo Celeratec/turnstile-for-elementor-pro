@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 
 use Elementor\Settings;
 use ElementorPro\Plugin;
-Use Elementor\Controls_Manager;
+use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 
 class TFEP_HCaptcha_Handler extends TFEP_Base_Captcha_Handler
