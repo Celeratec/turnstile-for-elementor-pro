@@ -5,7 +5,7 @@
 [![WordPress](https://img.shields.io/badge/WordPress-5.0%2B-blue?style=flat-square&logo=wordpress)](https://wordpress.org/)
 [![Elementor Pro](https://img.shields.io/badge/Elementor%20Pro-2.0%2B-orange?style=flat-square)](https://elementor.com/pro/)
 
-> **Professional CAPTCHA integration for Elementor Pro forms** - Add hCaptcha and Cloudflare Turnstile protection with seamless, native-like integration. Maintained by [Celeratec VPS Hosting](https://github.com/Celeratec).
+> **Professional CAPTCHA integration for Elementor Pro forms** - Add hCaptcha and Cloudflare Turnstile protection with seamless, native-like integration. Maintained by [Celeratec VPS Hosting](https://Hosting.Celeratec.cloud).
 
 ---
 
@@ -199,7 +199,7 @@ This plugin is a fork of [Captcha for Elementor Pro Forms](https://github.com/Da
 
 ### Maintained By
 
-- **[Celeratec, LLC](https://github.com/Celeratec)** - Celeratec VPS Hosting
+- **[Celeratec, LLC](https://Hosting.Celeratec.cloud)** - Celeratec VPS Hosting
 
 ### Powered By
 

@@ -128,7 +128,7 @@ Initial release of Turnstile for Elementor Pro by Celeratec.
 
 This plugin is a fork of "Captcha for Elementor Pro Forms" originally created by
 [Dave Podosyan](https://github.com/DavePodosyan) and released under the GPL v2 or later license.
-Rebranded and maintained by [Celeratec, LLC](https://github.com/Celeratec) for Celeratec VPS Hosting clients.
+Rebranded and maintained by [Celeratec, LLC](https://Hosting.Celeratec.cloud) for Celeratec VPS Hosting clients.
 
 == Development ==
 

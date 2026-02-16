@@ -6,7 +6,7 @@
  * Description: Adds hCaptcha and Cloudflare Turnstile support to Elementor Pro forms with seamless integration.
  * Version: 1.0.14
  * Author: Celeratec, LLC
- * Author URI: https://github.com/Celeratec/turnstile-for-elementor-pro
+ * Author URI: https://Hosting.Celeratec.cloud
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: turnstile-for-elementor-pro
@@ -19,7 +19,7 @@
  * created by Dave Podosyan (https://github.com/DavePodosyan).
  * Original source: https://github.com/DavePodosyan/captcha-for-elementor-pro-forms
  *
- * Modified by Celeratec, LLC (https://github.com/Celeratec) on 2026-02-16.
+ * Modified by Celeratec, LLC (https://Hosting.Celeratec.cloud) on 2026-02-16.
  * Changes: Rebranded for distribution by Celeratec VPS Hosting.
  *
  * This program is free software; you can redistribute it and/or modify

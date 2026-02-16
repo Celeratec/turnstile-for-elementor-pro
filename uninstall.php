@@ -6,7 +6,7 @@
  * This file is part of Turnstile for Elementor Pro by Celeratec, a fork of
  * "Captcha for Elementor Pro Forms" by Dave Podosyan, licensed under GPL v2+.
  *
- * Modified by Celeratec, LLC on 2026-02-16.
+ * Modified by Celeratec, LLC (https://Hosting.Celeratec.cloud) on 2026-02-16.
  */
 
 if (!defined('WP_UNINSTALL_PLUGIN')) {
