@@ -4,7 +4,7 @@
  * Plugin Name: Turnstile for Elementor Pro by Celeratec
  * Plugin URI: https://github.com/Celeratec/turnstile-for-elementor-pro
  * Description: Adds hCaptcha and Cloudflare Turnstile support to Elementor Pro forms with seamless integration.
- * Version: 1.0.14
+ * Version: 1.0.15
  * Author: Celeratec, LLC
  * Author URI: https://Hosting.Celeratec.cloud
  * License: GPL v2 or later
@@ -38,7 +38,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('TFEP_VERSION')) {
-    define('TFEP_VERSION', '1.0.14');
+    define('TFEP_VERSION', '1.0.15');
 }
 
 if (!defined('TFEP_PLUGIN_FILE')) {

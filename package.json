@@ -1,6 +1,6 @@
 {
   "name": "turnstile-for-elementor-pro",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Adds hCaptcha and Cloudflare Turnstile support to Elementor Pro forms",
   "repository": {
     "type": "git",
